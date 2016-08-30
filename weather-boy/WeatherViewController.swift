@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import CoreLocation
 
 class WeatherViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
@@ -17,6 +18,7 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBOutlet weak var currentWeatherImage: UIImageView!
     @IBOutlet weak var currentWeatherTypeLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    
     
     var currentWeather: CurrentWeather!
     var forecast: Forecast!
@@ -33,10 +35,10 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
         currentWeather.downloadWeatherDetails {
             self.updateCurrentWeather()
             self.downloadForecastData {
-                print(";)")
             }
         }
     }
+    
     
     func downloadForecastData(completed: DownloadComplete) {
         //downloading forecast weather data for tableview
@@ -50,6 +52,7 @@ class WeatherViewController: UIViewController, UITableViewDataSource, UITableVie
                     }
                 }
             }
+            self.forecasts.remove(at: 0)
             self.tableView.reloadData()
         }
         completed()

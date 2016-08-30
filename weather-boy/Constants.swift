@@ -13,6 +13,8 @@ let ZIP_KEY = "?zip="
 let DURHAM_ZIP = "27705,us"
 let APP_ID_KEY = "&appid="
 let API_KEY = "d27704f43741d38d4346f5f9b8cd89ba"
+
 let CURRENT_WEATHER_URL = "\(BASE_URL)\(ZIP_KEY)\(DURHAM_ZIP)\(APP_ID_KEY)\(API_KEY)"
+let FORECAST_URL = "http://api.openweathermap.org/data/2.5/forecast/daily?zip=27705,us&cnt=10&mode=json&appid=d27704f43741d38d4346f5f9b8cd89ba"
 
 typealias DownloadComplete = () -> ()

@@ -15,3 +15,4 @@ let APP_ID_KEY = "&appid="
 let API_KEY = "d27704f43741d38d4346f5f9b8cd89ba"
 let CURRENT_WEATHER_URL = "\(BASE_URL)\(ZIP_KEY)\(DURHAM_ZIP)\(APP_ID_KEY)\(API_KEY)"
 
+typealias DownloadComplete = () -> ()
